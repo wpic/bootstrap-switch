@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="no-js" lang='en'>
+<head>
+    <title>Sample bootstrap-switch</title>
+
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			padding-top: 2em;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<p>
+		Simple:<br/>
+		<input type='checkbox' name='checkbox1' />
+	</p>
+
+	<p>
+		Cancel it:<br/>
+		<input type='checkbox' name='checkbox2' checked />
+	</p>
+	<p>
+		Customize it:<br/>
+		<input type='checkbox' name='checkbox3' />
+	</p>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js" ></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" ></script>
+<script src="bootstrap-switch.js" ></script>
+<script>
+// Remember set you events before call bootstrapSwitch or they will fire after bootstrapSwitch's events
+$("[name='checkbox2']").change(function() {
+	if(!confirm('Do you wanna cancel me!')) {
+		this.checked = true;
+	}
+});
+
+$("[name='checkbox1'],[name='checkbox2']").bootstrapSwitch();
+$("[name='checkbox3']").bootstrapSwitch({
+	on: 'Enabled',
+	off: 'Disabled',
+	onClass: 'success',
+	offClass: 'warning'
+});
+</script>
+
+
+</body>
+</html>
+
