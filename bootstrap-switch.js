@@ -53,12 +53,12 @@
 
 			function applyChange(b) {
 				if(b) {
-					on.attr('class', 'btn btn-' + settings.onClass+settings.size+disabled).html(settings.on);
-					off.attr('class', 'btn btn-default active'+settings.size+disabled).html(settings.offLabel);
+					on.attr('class', 'btn active btn-' + settings.onClass+settings.size+disabled).html(settings.on);
+					off.attr('class', 'btn btn-default '+settings.size+disabled).html(settings.offLabel);
 				}
 				else {
-					on.attr('class', 'btn btn-default active'+settings.size+disabled).html(settings.onLabel);
-					off.attr('class', 'btn btn-' + settings.offClass+settings.size+disabled).text(settings.off);
+					on.attr('class', 'btn btn-default '+settings.size+disabled).html(settings.onLabel);
+					off.attr('class', 'btn active btn-' + settings.offClass+settings.size+disabled).text(settings.off);
 				}
 			}
 			applyChange(c.is(':checked'));
@@ -72,4 +72,3 @@
 		});
 	};
 } ( jQuery ));
-
