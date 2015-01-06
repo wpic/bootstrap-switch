@@ -6,11 +6,13 @@ Very simple, fast and lightweight (> 2K) jquery plugin for bootstrap to render c
 
 ```javascript
 $(SELECTOR).bootstrapSwitch({
-	on: On label text,
-	off: Off label text,
-	onClass: success/primary/danger/warning/default,
-	offClass: success/primary/danger/warning/default
+    on: 'On', // default 'On'
+    off: 'Off', // default 'Off'
+    onLabel: 'closed', //default ''
+    offLabel: 'open', //default ''
+    same: false, // default false. same text for on/off and onLabel/offLabel
+    size: 'lg', // xs/sm/md/lg, default 'md'
+    onClass: 'primary', //success/primary/danger/warning/default, default 'primary'
+    offClass: 'default', //success/primary/danger/warning/default default 'default'
 });
 ```
-
-Checkout here for [demo](http://wpic.bitbucket.org/bootstrap-switch/sample.html)
