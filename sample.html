@@ -3,8 +3,12 @@
 <head>
     <title>Sample bootstrap-switch</title>
 
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<style>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <style>
 		body {
 			padding-top: 2em;
 		}
@@ -14,21 +18,38 @@
 
 <div class="container">
 	<p>
-		Simple:<br/>
+		Default:<br/>
 		<input type='checkbox' name='checkbox1' />
 	</p>
 
 	<p>
-		Cancel it:<br/>
+		Event change:<br/>
 		<input type='checkbox' name='checkbox2' checked />
 	</p>
 	<p>
-		Customize it:<br/>
+		Different classes:<br/>
 		<input type='checkbox' name='checkbox3' />
 	</p>
+
+	<p>
+		Label Text:<br/>
+		<input type='checkbox' name='checkbox4' />
+	</p>
+
+	<p>
+		Same lables/text:<br/>
+		<input type='checkbox' name='checkbox5' />
+	</p>
+
+	<p>
+		Sizes (xs, sm, md, lg):<br/>
+		<input type='checkbox' name='checkbox6' />
+        <input type='checkbox' name='checkbox7' />
+        <input type='checkbox' name='checkbox8' />
+        <input type='checkbox' name='checkbox9' />
+	</p>
+
 </div>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js" ></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" ></script>
 <script src="bootstrap-switch.js" ></script>
 <script>
 // Remember set you events before call bootstrapSwitch or they will fire after bootstrapSwitch's events
@@ -39,12 +60,37 @@ $("[name='checkbox2']").change(function() {
 });
 
 $("[name='checkbox1'],[name='checkbox2']").bootstrapSwitch();
+
 $("[name='checkbox3']").bootstrapSwitch({
 	on: 'Enabled',
 	off: 'Disabled',
 	onClass: 'success',
 	offClass: 'warning'
 });
+
+$("[name='checkbox4']").bootstrapSwitch({
+    onLabel: 'closed',
+    offLabel: 'open'
+});
+
+$("[name='checkbox5']").bootstrapSwitch({
+    same: true
+});
+
+$("[name='checkbox6']").bootstrapSwitch({
+    size: 'xs'
+});
+$("[name='checkbox7']").bootstrapSwitch({
+    size: 'sm'
+});
+$("[name='checkbox8']").bootstrapSwitch({
+    size: 'md'//default
+});
+$("[name='checkbox9']").bootstrapSwitch({
+    size: 'lg'
+});
+
+
 </script>
 
 
