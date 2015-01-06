@@ -27,24 +27,34 @@
 		var settings = $.extend({
 			on: 'On',
 			off: 'Off	',
+			onLabel: '&nbsp;&nbsp;&nbsp;',
+			offLabel: '&nbsp;&nbsp;&nbsp;',
+			same: false,//same labels for on/off states
+			size: 'md',
 			onClass: 'primary',
-			offClass: 'danger'
+			offClass: 'primary'
 			}, options );
+
+		settings.size = ' btn-'+settings.size;
+		if (settings.same){
+			settings.onLabel = settings.on;
+			settings.offLabel = settings.off;
+		}
 
 		return this.each(function(e) {
 			var c = $(this);
 			var div = $("<div class='btn-group btn-toggle'></div>").insertAfter(this);
-			var on = $("<button class='btn btn-primary'></button>").text(settings.on).css('margin-right', '0px').appendTo(div);
-			var off = $("<button class='btn btn-danger'></button>").text(settings.off).css('margin-left', '0px').appendTo(div);
+			var on = $("<button class='btn btn-primary "+settings.size+"'></button>").html(settings.on).css('margin-right', '0px').appendTo(div);
+			var off = $("<button class='btn btn-danger "+settings.size+"'></button>").html(settings.off).css('margin-left', '0px').appendTo(div);
 
 			function applyChange(b) {
 				if(b) {
-					on.attr('class', 'btn btn-' + settings.onClass);
-					off.attr('class', 'btn btn-default active');
+					on.attr('class', 'btn btn-' + settings.onClass+settings.size).html(settings.on);
+					off.attr('class', 'btn btn-default active'+settings.size).html(settings.offLabel);
 				}
 				else {
-					on.attr('class', 'btn btn-default active');
-					off.attr('class', 'btn btn-' + settings.offClass);
+					on.attr('class', 'btn btn-default active'+settings.size).html(settings.onLabel);
+					off.attr('class', 'btn btn-' + settings.offClass+settings.size).text(settings.off);
 				}
 			}
 			applyChange(c.is(':checked'));
