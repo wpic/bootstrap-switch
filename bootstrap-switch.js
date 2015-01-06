@@ -1,4 +1,3 @@
-
 /* ========================================================================
  * bootstrap-switch - v1.0
  * https://github.com/wpic/bootstrap-switch
@@ -32,7 +31,7 @@
 			same: false,//same labels for on/off states
 			size: 'md',
 			onClass: 'primary',
-			offClass: 'primary'
+			offClass: 'default'
 			}, options );
 
 		settings.size = ' btn-'+settings.size;
@@ -43,9 +42,9 @@
 
 		return this.each(function(e) {
 			var c = $(this);
-			var div = $("<div class='btn-group btn-toggle'></div>").insertAfter(this);
-			var on = $("<button class='btn btn-primary "+settings.size+"'></button>").html(settings.on).css('margin-right', '0px').appendTo(div);
-			var off = $("<button class='btn btn-danger "+settings.size+"'></button>").html(settings.off).css('margin-left', '0px').appendTo(div);
+			var div = $('<div class="btn-group btn-toggle" style="white-space: nowrap;"></div>').insertAfter(this);
+			var on = $('<button class="btn btn-primary '+settings.size+'" style="float: none;display: inline-block;"></button>').html(settings.on).css('margin-right', '0px').appendTo(div);
+			var off = $('<button class="btn btn-danger '+settings.size+'" style="float: none;display: inline-block;"></button>').html(settings.off).css('margin-left', '0px').appendTo(div);
 
 			function applyChange(b) {
 				if(b) {
