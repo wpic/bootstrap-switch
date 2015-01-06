@@ -1,4 +1,7 @@
 /* ========================================================================
+ * bootstrap-switch - v2.0
+ * https://github.com/mewsoft/bootstrap-switch
+ *
  * bootstrap-switch - v1.0
  * https://github.com/wpic/bootstrap-switch
  * ========================================================================
@@ -42,18 +45,20 @@
 
 		return this.each(function(e) {
 			var c = $(this);
+			var disabled = c.is(":disabled") ? " disabled" : "";
+
 			var div = $('<div class="btn-group btn-toggle" style="white-space: nowrap;"></div>').insertAfter(this);
-			var on = $('<button class="btn btn-primary '+settings.size+'" style="float: none;display: inline-block;"></button>').html(settings.on).css('margin-right', '0px').appendTo(div);
-			var off = $('<button class="btn btn-danger '+settings.size+'" style="float: none;display: inline-block;"></button>').html(settings.off).css('margin-left', '0px').appendTo(div);
+			var on = $('<button class="btn btn-primary '+settings.size+disabled+'" style="float: none;display: inline-block;"></button>').html(settings.on).css('margin-right', '0px').appendTo(div);
+			var off = $('<button class="btn btn-danger '+settings.size+disabled+'" style="float: none;display: inline-block;"></button>').html(settings.off).css('margin-left', '0px').appendTo(div);
 
 			function applyChange(b) {
 				if(b) {
-					on.attr('class', 'btn btn-' + settings.onClass+settings.size).html(settings.on);
-					off.attr('class', 'btn btn-default active'+settings.size).html(settings.offLabel);
+					on.attr('class', 'btn btn-' + settings.onClass+settings.size+disabled).html(settings.on);
+					off.attr('class', 'btn btn-default active'+settings.size+disabled).html(settings.offLabel);
 				}
 				else {
-					on.attr('class', 'btn btn-default active'+settings.size).html(settings.onLabel);
-					off.attr('class', 'btn btn-' + settings.offClass+settings.size).text(settings.off);
+					on.attr('class', 'btn btn-default active'+settings.size+disabled).html(settings.onLabel);
+					off.attr('class', 'btn btn-' + settings.offClass+settings.size+disabled).text(settings.off);
 				}
 			}
 			applyChange(c.is(':checked'));

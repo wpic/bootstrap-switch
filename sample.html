@@ -42,6 +42,11 @@
 	</p>
 
 	<p>
+		Disabled:<br/>
+		<input type='checkbox' name='checkbox10' disabled />
+	</p>
+
+	<p>
 		Sizes (xs, sm, md, lg):<br/>
 		<input type='checkbox' name='checkbox6' />
         <input type='checkbox' name='checkbox7' />
@@ -59,7 +64,7 @@ $("[name='checkbox2']").change(function() {
 	}
 });
 
-$("[name='checkbox1'],[name='checkbox2']").bootstrapSwitch();
+$("[name='checkbox1'],[name='checkbox2'], [name='checkbox10']").bootstrapSwitch();
 
 $("[name='checkbox3']").bootstrapSwitch({
 	on: 'Enabled',
