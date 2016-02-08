@@ -20,6 +20,6 @@ $(SELECTOR).bootstrapSwitch({
 Copy the ```bootstrap-switch.js``` or use bower to install:
 
 ```
-bower install bootswitch
+bower install bootstrapswitch
 ```
 
