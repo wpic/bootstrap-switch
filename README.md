@@ -16,3 +16,10 @@ $(SELECTOR).bootstrapSwitch({
     offClass: 'default', //success/primary/danger/warning/default default 'default'
 });
 ```
+## Install
+Copy the ```bootstrap-switch.js``` or use bower to install:
+
+```
+bower install bootswitch
+```
+
