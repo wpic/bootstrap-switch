@@ -45,7 +45,12 @@
 
 		return this.each(function(e) {
 			var c = $(this);
-			var disabled = c.is(":disabled") ? " disabled" : "";
+			var disabled = c.is(':disabled') ? ' disabled' : '';
+
+			// Remove the ability to tab to the secondary (white) toggle button.
+			var tabindex = ' tabindex="-1"',
+			// Hide second button from screen readers.
+			    aria = ' aria-hidden="true"'; 
 
 			var div = $('<div class="btn-group btn-toggle" style="white-space: nowrap;"></div>').insertAfter(this);
 			var on = $('<button class="btn btn-primary '+settings.size+disabled+'" style="float: none;display: inline-block;"></button>').html(settings.on).css('margin-right', '0px').appendTo(div);
@@ -63,8 +68,8 @@
 			}
 			applyChange(c.is(':checked'));
 
-			on.click(function(e) {e.preventDefault();c.prop("checked", !c.prop("checked")).trigger('change')});
-			off.click(function(e) {e.preventDefault();c.prop("checked", !c.prop("checked")).trigger('change')});
+			on.click(function(e) {e.preventDefault();c.prop('checked', !c.prop('checked')).trigger('change')});
+			off.click(function(e) {e.preventDefault();c.prop('checked', !c.prop('checked')).trigger('change')});
 
 			$(this).hide().on('change', function() {
 				applyChange(c.is(':checked'))
